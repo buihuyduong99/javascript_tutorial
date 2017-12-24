@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="lession04.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+   $(document).ready(function() {
+    $('#menu').neoAnimateMenu({
+        padding:20
+    });
+    $("body").dpopup();
+});
+(function($){
+    $.fn.extend({ 
+ 
+        // truyền biến options vào hàm
+        neoAnimateMenu: function(options) {
+ 
+            // Đặt các giá trị mặc định
+            var defaults = {
+                animatePadding: 60
+            };
+             
+            var options = $.extend(defaults, options);
+         
+            return this.each(function() {
+                var opts =options;
+                 
+                // Đặt tên biến cho element (ul)
+                var obj = $(this);              
+                 
+                // Lấy tất cả thẻ li trong ul
+                var items = $("li a", obj);
+               
+                // Thêm sự kiện mouseover và mouseout vào thẻ a
+                items.mouseover(function() {
+                    // lúc này this chính là thẻ a
+                    $(this).animate({paddingLeft: opts.animatePadding}, 500);
+                }).mouseout(function() {
+                    $(this).animate({paddingLeft: '0'}, 500);
+                });
+            });
+        }
+    });
+})(jQuery);
+
+});
+(function($){
+    $.fn.extend({
+        dpopup: function () {
+
+            $(".button").click(function(){
+                $("body").addClass("d-body");
+                $("div.hide-popup").addClass("show-popup").removeClass("hide-popup");
+            });
+        }
+    });
+})(jQuery);
+</script>
+
+</head>
+<body>
+    <div class="button">
+        <p class="show">Hiện Popup</p>
+        <div class="hide-popup" id="off">
+        <p class="show-popup__content">Hello Words!</p>   
+        </div>
+    </div>
+    
+<ul id="menu">
+    <li><a href="#">Trang chủ</a></li>
+    <li><a href="#">Tổng hợp</a></li>
+    <li><a href="#">Hướng dẫn</a></li>
+    <li><a href="#">Miễn phí</a></li>
+    <li><a href="#">Liên hệ</a></li>
+</ul>
+
+<button>Click me to hide paragraphs</button>
+
+</body>
+</html>

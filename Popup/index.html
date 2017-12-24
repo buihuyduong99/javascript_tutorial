@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+    <div class="notification">
+            <p style="padding: 27px 0;color: #d24c4c;font-weight: bold;font-size: 30px;">Merry Christmas</p>
+        <button id='ok'>OK</button>
+        <button id='hide'>Hide</button>
+        <img id='close' src="image/close-icon.png" alt="">
+    </div>
+ 
+    <script src="popup.js"></script>
+    <script>
+   $(document).ready(function(){
+        $('.notification').notification(
+            {
+                time:3000,
+            },
+        );
+    });
+    </script>
+    </body>
+</html>
