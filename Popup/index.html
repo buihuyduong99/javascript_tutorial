@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    </head>
-    <body>
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
     <div class="notification">
-            <p style="padding: 27px 0;color: #d24c4c;font-weight: bold;font-size: 30px;">Merry Christmas</p>
+        <p style="padding: 27px 0;color: #d24c4c;font-weight: bold;font-size: 30px;">Merry Christmas</p>
         <button id='ok'>OK</button>
         <button id='hide'>Hide</button>
         <img id='close' src="image/close-icon.png" alt="">
     </div>
- 
+
     <script src="popup.js"></script>
     <script>
-   $(document).ready(function(){
-        $('.notification').notification(
-            {
-                time:3000,
-            },
-        );
-    });
+        $(function () {
+            $('.notification').notification(
+                {
+                    closeButton: true,
+                    closeButtonText: '[hide]',
+                    closeButtonId: 'hide',
+                    time: 90000,
+                    efect: 'fade',
+                    opacity: 0.5,
+                    onVisible: function () {
+
+                    },
+                    onHide: function () {
+
+                    },
+                }
+            );
+        });
     </script>
-    </body>
+</body>
+
 </html>

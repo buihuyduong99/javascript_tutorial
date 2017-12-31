@@ -1,4 +1,3 @@
-
 $(function() {
   $.miniNotification = function(element, options) {
     var appendCloseButton, getHiddenCssProps, getVisibleCssProps, setState, state, wrapInnerElement,
@@ -23,7 +22,6 @@ $(function() {
       onHide: function() {},
       onHidden: function() {}
     };
-    console.log(this.defaults);
     state = '';
     this.settings = {};
     this.$element = $(element);
@@ -52,9 +50,8 @@ $(function() {
       if ((_this.getSetting('position')) === 'bottom') {
         css['bottom'] = 0;
       } else {
-        css['top'] = 300;
+        css['top'] = 0;
       }
-      console.log(css);
       return css;
     };
     wrapInnerElement = function() {
@@ -72,7 +69,6 @@ $(function() {
       _this.$element.children().append($closeButton);
       return $closeButton.bind('click', function() {
         return _this.hide();
-        //callback
       });
     };
     this.getState = function() {
