@@ -21,6 +21,7 @@ function displayUsers(users){
         ul.append(li);
     });
     $("#listUsers").append(ul);
+    
 }
 
 function callUsersService(data) {
@@ -48,3 +49,7 @@ function callUsersService(data) {
               }
           });
 }
+            
+                
+           
+    
